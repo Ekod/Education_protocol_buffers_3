@@ -1,0 +1,29 @@
+/*
+    Hey, man! Welcome to Protocol Buffers 3 :)))))))))) Don't sweat it, I got you! ;)
+
+*/
+
+syntax = "proto3"; //You gotta include it at the top of your code. You can use proto2 but you gotta go with the times, man and use proto3 ;)
+
+message SomeMessage{ //"message" is required, the name of the message is up to you
+    int32 id = 1; // always start with the type of the data, then the name you want it to have and then the tag (the part after "="), mind you that tags should always start with 1 (there are exeptions, like when you're creating enums, but we'll get to that) int32 goes up to 2,147,483,647. If you're planning to go beyond that use int64, it goes up to 9,223,372,036,854,775,807 (if you will ever use this number in your career, please let me know xD )
+    string name = 2; //Uhm, string is string :D
+    bool is_validated = 3;// I mean, you get this one as well, right? xD
+    float rating = 4; // If you ever need to go very precise (like 4.12568362517458583262 xD) use double
+    repeated string services = 5; // "repeated" allows you to create lists/arrays, but you gotta specify what type of data it will contain (i.e. strings, booleans, integers(when you specify the type use singular form :))
+
+    enum Physique{ //Use enums when you know the values
+        UNKNOWN_PHYSIQUE = 0;
+        THIN = 1;
+        AVERAGE = 2;
+        OVERWEIGHT = 3;
+        FIT = 4;
+    }
+
+    Physique physique = 6;
+}
+//There is also a thing called "default values", basicaly every type has its own default value: numbers = 0, bolleans = false, strings = "", enums = first value, repeated = empty list, bytes = empty bytes
+
+//That's the fundamentals, all you need now is to download the porotoc compiler "https://github.com/protocolbuffers/protobuf/releases" and you're good to go :)
+
+//P.S. once you've compiled the code, for the love of all that is sacred DO NOT ask me to explain to you the meaning of the output that you've gotten! I don't think my keyboard will be able to handle this ammount of typing xD just read up on it! Bless you!
